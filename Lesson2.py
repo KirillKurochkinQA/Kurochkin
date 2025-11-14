@@ -156,3 +156,10 @@ text_strip = text.strip()
 result = text_strip.startswith("a") and text_strip.endswith("c")
 print(result)
 
+# Задача №21
+# Создай строку "Python".
+# Выведи третий символ этой строки.
+text = "Python"
+result = text[2]
+print(result)
+
