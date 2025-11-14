@@ -74,4 +74,85 @@ string_strip = string.strip()
 start_string = string_strip.startswith("Пробелы")
 print(start_string)
 
+# Задача №12
+# Создай строку "hello world".
+# Замени в ней слово "world" на "Python".
+# Выведи результат.
+text = "hello world"
+new_text = text.replace("world", "Python")
+print(new_text)
+
+# Задача №13
+# Создай строку "Python" и выведи на экран её длину.
+# Затем создай ещё одну строку "Java" и тоже выведи её длину.
+# Сравни длины обеих строк и выведи результат (True или False):
+# "Длина строки 'Python' больше, чем длина строки 'Java'".
+text_py = "Python"
+print(len(text_py))
+text_ja = "Java"
+print(len(text_ja))
+text = len(text_py) > len(text_ja)
+print(text)
+
+# Задача №14
+# Создай строку "Hello, my name is Bob".
+# Проверь, содержится ли в ней слово "name".
+# Выведи результат (True или False).
+text = "Hello, my name is Bob"
+result = "name" in text
+print(result)
+
+# Задача №15
+# Создай строку "Python" и выведи на экран символ, который находится посередине.
+# Если строка состоит из чётного количества символов — выведи второй символ из середины.
+text = "Python"
+result = text[3]
+print(result)
+
+# Задача №16
+# Создай строку " Привет, друг! " (с лишними пробелами).
+# Убери пробелы в начале и в конце, а затем замени все двойные пробелы на одинарные.
+# Выведи итоговую строку.
+text = " Привет,  друг! "
+text_strip = text.strip()
+text_replace = text_strip.replace("  ", " ")
+print(text_replace)
+
+# Задача №17
+# Создай строку "123" и выведи её длину.
+# Затем создай строку "abc" и тоже выведи её длину.
+# Сравни длины: выведи True, если длина "123" равна длине "abc", иначе — False.
+text = "123"
+print(len(text))
+string = "abc"
+print(len(string))
+result = len(text) == len(string)
+print(result)
+
+# Задача №18
+# Создай строку "Python" и выведи её в обратном порядке.
+# (Используй срез, чтобы перевернуть строку.)
+text = "Python"
+result = text[::-1]
+print(result)
+
+# Задача №19
+# Создай строку "Hello, World!".
+# Раздели строку на две части: до запятой и после.
+# Выведи каждую часть отдельно.
+text = "Hello, World!"
+split_text = text.split(",")
+split1 = split_text[0]
+split2 = split_text[1]
+print(split1)
+print(split2)
+
+# Задача №20
+# Создай строку " abc ".
+# Убери пробелы в начале и в конце, а затем проверь, начинается ли строка с "a" и заканчивается ли на "c".
+# Выведи результат проверки (True или False).
+text = " abc "
+text_strip = text.strip()
+result = text_strip.startswith("a") and text_strip.endswith("c")
+print(result)
 
