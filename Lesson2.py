@@ -192,3 +192,42 @@ print(len(result))
 text = "Hello"
 result = (text + " ") * 4
 print(result)
+
+# Задача №26
+# Создай строку "Python" и выведи на экран символ с индексом 1.
+text = "Python"
+result = text[1]
+print(result)
+
+# Задача №27
+# Создай строку " abc def ".
+# Убери пробелы в начале и в конце, а затем посчитай, сколько раз в строке встречается буква "a".
+# Выведи результат.
+text = " abc def "
+result = text.strip()
+result = result.count("a")
+print(result)
+
+# Задача №28
+# Создай строку "Hello, World!".
+# Выведи срез строки, который содержит только слово "World".
+text = "Hello, World!"
+result = text[7:12:]
+print(result)
+
+# Задача №29
+# Создай строку " Python ".
+# Убери пробелы в начале и в конце, а затем проверь, начинается ли строка с "P" и заканчивается на "n".
+# Выведи результат проверки (True или False).
+text = "Python"
+text_1 = text.strip()
+result = text_1.startswith("P") and text_1.endswith("n")
+print(result)
+
+# Задача №30
+# Создай строку "Hello".
+# Проверь, равна ли строка "Hello" или "hello" (без учёта регистра).
+# Выведи результат (True или False).
+text = "Hello"
+result = text.lower() == "hello"
+print(result)
