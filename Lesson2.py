@@ -231,3 +231,18 @@ print(result)
 text = "Hello"
 result = text.lower() == "hello"
 print(result)
+
+# Задача №31
+# Создай строку " abc ".
+# Убери пробелы в начале и в конце, а затем проверь, содержит ли строка букву "b".
+# Выведи результат (True или False).
+text = " abc "
+text_strip = text.strip()
+result = "b" in text_strip
+print(result)
+
+# Задача №32
+# Создай строку "Python" и выведи её первые три символа
+text = "Python"
+result = text[0:3]
+print(result)
