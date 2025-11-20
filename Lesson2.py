@@ -246,3 +246,67 @@ print(result)
 text = "Python"
 result = text[0:3]
 print(result)
+
+# Задача №33
+# Создай строку "Hello, my name is Python".
+# Выведи на экран строку, в которой слово "Python" заменено на "Java".
+text = "Hello, my name is Python"
+result = text.replace("Python", "Java")
+print(result)
+
+# Задача №34
+# Создай строку " abc def ".
+# Убери пробелы в начале и в конце, а затем посчитай, сколько в строке всего символов.
+# Выведи результат.
+text = " abc def "
+text_strip = text.strip()
+print(len(text_strip))
+
+# Задача №35
+# Создай строку "Hello".
+# Выведи на экран строку, которая повторяет "Hello" 3 раза, но между каждым повторением добавляется "-".
+text = "Hello"
+result = f"{text}-{text}-{text}"
+print(result)
+
+# Задача №36
+#
+# Создай строку " Hello World ".
+# Убери пробелы в начале и в конце, а затем проверь, начинается ли строка с "Hello".
+# Выведи результат (True или False).
+text = " Hello World "
+text_strip = text.strip()
+result = text_strip.startswith("Hello")
+print(result)
+
+# Задача №37
+# Создай строку "Python".
+# Выведи на экран символ с индексом 4.
+text = "Python"
+result = text[4]
+print(result)
+
+# Задача №38
+# Создай строку " abc def ghi ".
+# Убери пробелы в начале и в конце, а затем раздели строку по пробелам.
+# Выведи результат.
+text = " abc def ghi "
+text_strip = text.strip()
+text_split = text_strip.split()
+print(text_split)
+
+# Задача №39
+# Создай строку "Hello".
+# Выведи на экран строку, которая состоит из этой строки, повторённой 2 раза, и добавь в конце "!".
+text = "Hello"
+result = text*2 + "!"
+print(result)
+
+# Задача №40
+# Создай строку " Python ".
+# Убери пробелы в начале и в конце, а затем проверь, равна ли строка "Python".
+# Выведи результат (True или False).
+text = " Python "
+text_strip = text.strip()
+result = text_strip == "Python"
+print(result)
