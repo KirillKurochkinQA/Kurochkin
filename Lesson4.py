@@ -105,3 +105,55 @@ elif grade >= 70 and grade < 80:
     print("C")
 else:
     print("F")
+
+
+# Задача 11: Логические операции
+# Создай переменные x и y и присвой им любые целые числа.
+# Напиши условие: если либо x больше 0, либо y больше 0 (но не оба сразу), выведи "Exactly one is positive".
+x = 15
+y = 5
+if x > 0 and y <= 0 or x <= 0 and y > 0:
+    print("Exactly one is positive")
+
+# Задача 12: Оператор else
+# Создай переменную logged_in и присвой ей логическое значение (True или False).
+# Напиши условие:
+# Если logged_in равно True — выведи "Access granted".
+# В противном случае — выведи "Access denied".
+logged_in = True
+if logged_in:
+    print("Access granted")
+else:
+    print("Access denied")
+
+# Задача 13: Логические операции в условиях
+# Создай переменные a, b и c и присвой им любые целые числа.
+# Напиши условие: если хотя бы одно из чисел отрицательное, выведи "There is a negative number".
+# Используй логический оператор or.
+a = 1
+b = 0
+c = -1
+if a < 0 or b < 0 or c < 0:
+    print("There is a negative number")
+
+# Задача 14: Тернарный оператор
+# Создай переменную speed и присвой ей любое число (целое или дробное).
+# Используй тернарный оператор, чтобы присвоить переменной status значение "Fast" — если speed больше 60, и "Slow" — в противном случае.
+# Выведи значение status.
+speed = 60
+status = "Fast" if speed > 60 else "Slow"
+print(status)
+
+# Задача 15: Оператор elif
+# Создай переменную day и присвой ей целое число от 1 до 7 (1 — понедельник, 7 — воскресенье).
+# Напиши условие с использованием if, elif, else, которое выводит:
+# "Weekday" — если день от 1 до 5,
+# "Weekend" — если день 6 или 7,
+# "Invalid day" — если число вне диапазона 1–7.
+day = 6
+if 1 <= day <= 5:
+    print("Weekday")
+elif 6 <= day <= 7:
+    print("Weekend")
+else:
+    print("Invalid day")
