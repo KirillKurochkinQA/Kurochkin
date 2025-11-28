@@ -142,3 +142,52 @@ if "priority" in record:
     print(record["priority"])
 else:
     print("Ключ не найден")
+
+# Задача 16.
+# Дан словарь:
+# cache = {"token": "abc123", "expires_in": 3600}
+# Напиши код, который удаляет из словаря элемент с ключом "token" и сразу после этого проверяет, остался ли он в словаре.
+# Если ключ "token" всё ещё есть — выведи True, иначе — False.
+# Используй оператор del для удаления и оператор in для проверки.
+cache = {"token": "abc123", "expires_in": 3600}
+del cache["token"]
+print("token" in cache)
+
+# Задача 17.
+# Дан словарь: options = {"verbose": False, "retry": 3}
+# Напиши код, который добавляет в словарь пару "timeout": 10, только если ключ "timeout" ещё не существует. После этого выведи словарь.
+# Используй проверку с оператором in и условную конструкцию if.
+options = {"verbose": False, "retry": 3}
+if "timeout" in options:
+    print(options)
+else:
+    options["timeout"] = 10
+    print(options)
+
+# Задача 18.
+# Дан словарь: mapping = {"a": 1, "b": 2, "c": 3}
+# Напиши код, который выводит значение по ключу "b", не используя прямой доступ вроде mapping["b"].
+# Вместо этого сначала получи список всех значений словаря, затем — список всех ключей, и используй их, чтобы найти нужное значение по позиции ключа "b".
+mapping = {"a": 1, "b": 2, "c": 3}
+keys = list(mapping.keys())
+values = list(mapping.values())
+index = keys.index("b")
+print(values[index])
+
+# Задача 19.
+# Дан словарь: flags = {"debug": False, "cache": True, "logging": True}
+# Напиши код, который выводит все значения словаря по одному, каждое — на новой строке.
+# Используй только метод .values() и цикл for.
+flags = {"debug": False, "cache": True, "logging": True}
+flags_values = flags.values()
+for flag in flags_values:
+    print(flag)
+
+# Задача 20.
+# Дан словарь: grades = {"math": 92, "english": 87, "history": 89}
+# Напиши код, который выводит все ключи словаря по одному, каждый — на новой строке.
+# Используй только метод .keys() и цикл for.
+grades = {"math": 92, "english": 87, "history": 89}
+grades_keys = grades.keys()
+for grade in grades_keys:
+    print(grade)
