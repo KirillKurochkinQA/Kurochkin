@@ -191,3 +191,63 @@ grades = {"math": 92, "english": 87, "history": 89}
 grades_keys = grades.keys()
 for grade in grades_keys:
     print(grade)
+
+# Задача 21.
+# Дан словарь: person = {"name": "Kirill", "age": 29, "city": "Moscow"}
+# Напиши код, который выводит каждую пару «ключ — значение» в формате:
+# name = Kirill
+# age = 29
+# city = Moscow
+person = {"name": "Kirill", "age": 29, "city": "Moscow"}
+for key, value in person.items():
+    print(f"{key} = {value}")
+
+# Задача 22.
+# Дан словарь: counts = {"a": 10, "b": 20, "c": 15}
+# Напиши код, который находит и выводит ключ, соответствующий максимальному значению в словаре.
+# В данном случае это "b", потому что у него значение 20.
+counts = {"a": 10, "b": 20, "c": 15}
+max_value = 0
+max_key = 0
+for key, value in counts.items():
+    if value > max_value:
+        max_value = value
+        max_key = key
+print(max_key)
+
+# Задача 23.
+# Дан словарь: status = {"server": "running", "db": "connected", "cache": "active"}
+# Напиши код, который проверяет, все ли значения в словаре равны строке "running".
+# Если все значения — "running", выведи True.
+# Если хотя бы одно значение отличается — выведи False.
+status = {"server": "running", "db": "connected", "cache": "active"}
+all_running = True
+for value in status.values():
+    if value != "running":
+        all_running = False
+        break
+print(all_running)
+
+# Задача 24.
+# Дан словарь: data = {"x": 5, "y": 5, "z": 5}
+# Напиши код, который проверяет, все ли значения в словаре одинаковые.
+# Если да — выведи True.
+# Если нет — выведи False.
+data = {"x": 5, "y": 5, "z": 5}
+number = list(data.values())[0]
+result = True
+for value in data.values():
+    if value != number:
+        result = False
+        break
+print(result)
+
+# Задача 25.
+# Дан словарь: settings = {"theme": "dark", "language": "ru", "notifications": True}
+# Напиши код, который создаёт копию этого словаря, изменяет в копии значение ключа "language" на "en",
+# а затем выводит оба словаря — исходный и копию — чтобы убедиться, что оригинал не изменился.
+settings = {"theme": "dark", "language": "ru", "notifications": True}
+settings_copy = settings.copy()
+settings_copy["language"] = "en"
+print(settings)
+print(settings_copy)
