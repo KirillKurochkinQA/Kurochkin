@@ -157,3 +157,57 @@ elif 6 <= day <= 7:
     print("Weekend")
 else:
     print("Invalid day")
+
+# Задача 16: Логические операции
+# Создай переменные has_license и is_adult, присвой им логические значения (True или False).
+# Напиши условие: если не (has_license и is_adult одновременно истинны), выведи "Cannot drive".
+# Используй логические операторы and и not.
+has_license = True
+is_adult = False
+if not (has_license and is_adult):
+    print("Cannot drive")
+
+# Задача 17: Оператор if
+# Создай переменную password и присвой ей строку.
+# Напиши условие: если длина строки password меньше 8 символов, выведи "Password too short".
+# Не используй else.
+password = "string"
+if len(password) < 8:
+    print("Password too short")
+
+# Задача 18: Логические операции в условиях
+# Создай переменные temperature и is_raining, присвой им значения:
+# temperature — любое число (например, 25)
+# is_raining — логическое значение (True или False)
+# Напиши условие: если температура выше 20 и не идёт дождь, выведи "Good weather!".
+# Используй and и not.
+temperature = 25
+is_raining = False
+if temperature > 20 and not is_raining:
+    print("Good weather!")
+
+# Задача 19: Тернарный оператор
+# Создай переменную points и присвой ей любое целое число.
+# Используй тернарный оператор, чтобы присвоить переменной result значение "Pass" — если points больше или равно 50, и "Fail" — в противном случае.
+# Выведи значение result.
+points = 40
+result = "Pass" if points >= 50 else "Fail"
+print(result)
+
+# Задача 20: Оператор elif
+# Создай переменную hour и присвой ей целое число от 0 до 23 (время суток в 24-часовом формате).
+# Напиши условие:
+# Если hour от 6 до 11 (включительно) — выведи "Morning".
+# Если hour от 12 до 17 (включительно) — выведи "Afternoon".
+# Если hour от 18 до 23 (включительно) — выведи "Evening".
+# Если hour от 0 до 5 (включительно) — выведи "Night".
+# Используй if, elif и else. Проверяй диапазоны с помощью логических операций.
+hour = 12
+if 0 <= hour <= 5:
+    print("Night")
+elif 6 <= hour <= 11:
+    print("Morning")
+elif 12 <= hour <= 17:
+    print("Afternoon")
+elif 18 <= hour <= 23:
+    print("Evening")
