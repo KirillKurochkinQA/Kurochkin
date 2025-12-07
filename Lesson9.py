@@ -157,3 +157,87 @@ class Cat:
         print(f"{self.name} говорит: Мяу!")
 my_cat = Cat("Дуся")
 my_cat.meow()
+
+# Задача 11
+# Создай класс BankAccount.
+# У него не должно быть общих атрибутов.
+# Конструктор должен принимать один аргумент balance и сохранять его как атрибут экземпляра.
+# Добавь метод deposit, который принимает сумму amount и увеличивает баланс на эту сумму.
+# Добавь метод get_balance, который возвращает текущий баланс.
+# Создай объект этого класса с начальным балансом 100, вызови метод deposit с аргументом 50, а затем выведи текущий баланс с помощью get_balance.
+class BankAccount:
+    def __init__(self, balance):
+        self.balance = balance
+    def deposit(self, amount):
+        self.balance += amount
+    def get_balance(self):
+        return self.balance
+my_bank = BankAccount(100)
+my_bank.deposit(50)
+get_balance = my_bank.get_balance()
+print(get_balance)
+
+# Задача 12
+# Создай класс LightBulb.
+# У него не должно быть общих атрибутов.
+# Конструктор должен инициализировать атрибут экземпляра is_on значением False (лампочка изначально выключена).
+# Добавь метод turn_on, который устанавливает is_on в True.
+# Добавь метод turn_off, который устанавливает is_on в False.
+# Добавь метод status, который выводит строку: "Лампочка включена.", если is_on равен True, и "Лампочка выключена." — если False.
+# Создай объект этого класса, вызови turn_on, а затем status.
+class LightBulb:
+    def __init__(self, is_on = False):
+        self.is_on = is_on
+    def turn_on(self):
+        self.is_on = True
+    def turn_off(self):
+        self.is_on = False
+    def status(self):
+        print("Лампочка включена.") if self.is_on else print("Лампочка выключена.")
+my_light = LightBulb()
+my_light.turn_on()
+my_light.status()
+
+# Задача 13
+# Создай класс Movie.
+# У него не должно быть общих атрибутов.
+# Конструктор должен принимать два аргумента: title и year, и сохранять их как атрибуты экземпляра.
+# Добавь метод info, который выводит строку: "Фильм: <title>, Год выпуска: <year>."
+# Создай объект этого класса с любым названием фильма и годом, затем вызови метод info.
+class Movie:
+    def __init__(self, title, year):
+        self.title = title
+        self.year = year
+    def info(self):
+        print(f"Фильм: {self.title}, Год выпуска: {self.year}.")
+my_movie = Movie("Тренер", 2020)
+my_movie.info()
+
+# Задача 14
+# Создай класс Calculator.
+# У него не должно быть общих атрибутов.
+# Конструктор не должен принимать аргументов и не должен ничего инициализировать (тело можно оставить пустым с помощью pass).
+# Добавь метод add, который принимает два аргумента a и b и возвращает их сумму.
+# Создай объект этого класса и с его помощью вычисли сумму чисел 7 и 3, затем выведи результат на экран.
+class Calculator:
+    def __init__(self):
+        pass
+    def add(self, a, b):
+            return a + b
+result = Calculator()
+print(result.add(7, 3))
+
+# Задача 15
+# Создай класс Animal.
+# У него должен быть общий атрибут kingdom со значением "Animalia".
+# Конструктор должен принимать один аргумент name и сохранять его как атрибут экземпляра.
+# Добавь метод classify, который выводит строку: "<name> принадлежит к царству <kingdom>."
+# Создай объект этого класса с любым именем и вызови метод classify.
+class Animal:
+    kingdom = "Animalia"
+    def __init__(self, name):
+        self.name = name
+    def classify(self):
+        print(f"{self.name} принадлежит к царству {self.kingdom}.")
+my_animal = Animal("Жираф")
+my_animal.classify()
