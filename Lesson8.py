@@ -292,3 +292,37 @@ def join_with_comma(*args):
     return ", ".join(args)
 print(join_with_comma("яблоки"))
 print(join_with_comma("яблоки", "бананы", "апельсины"))
+
+# Задача 21
+# Напиши функцию с именем create_email, которая:
+# принимает два обязательных аргумента: name и domain,
+# и один необязательный аргумент separator со значением по умолчанию ".",
+# возвращает строку вида: {name}{separator}@{domain}.
+def create_email(name, domain, separator = "."):
+    return f"{name}{separator}@{domain}"
+print(create_email("kirill", "gmail.com"))
+print(create_email("kirill", "gmail.com", separator = "_"))
+
+# Задача 22
+# Напиши функцию с именем full_name, которая:
+# принимает три аргумента: first, last, middle
+# но только first и last — обязательные,
+# а middle — необязательный, со значением по умолчанию None,
+# функция должна возвращать строку в формате:
+# если middle задан (не None) → "Фамилия Имя Отчество"
+# если middle не задан → "Фамилия Имя"
+def full_name(first, last, middle = None):
+    return f"{last} {first} {middle}" if middle is not None else f"{last} {first}"
+print(full_name("Кирилл", "Курочкин", "Андреевич"))
+print(full_name("Елена", "Курочкина"))
+
+# Задача 23
+# Напиши функцию с именем greet_user, которая:
+# принимает один обязательный аргумент — name,
+# и один необязательный аргумент — time_of_day со значением по умолчанию "день",
+# Функция должна возвращать строку:
+# "Добрый {time_of_day}, {name}!"
+def greet_user(name, time_of_day = "день"):
+    return f"Добрый {time_of_day}, {name}!"
+print(greet_user("Кирилл", "вечер"))
+print(greet_user("Анна"))
