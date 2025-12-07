@@ -251,3 +251,39 @@ settings_copy = settings.copy()
 settings_copy["language"] = "en"
 print(settings)
 print(settings_copy)
+
+# Задача 26.
+# Дан словарь: defaults = {"timeout": 30, "retries": 3, "debug": False}
+# Напиши код, который обновляет этот словарь значениями из другого словаря:
+# overrides = {"retries": 5, "debug": True}
+# После обновления выведи итоговый словарь defaults.
+defaults = {"timeout": 30, "retries": 3, "debug": False}
+overrides = {"retries": 5, "debug": True}
+defaults.update(overrides)
+print(defaults)
+
+# Задача 27.
+# Дан словарь: params = {"host": "localhost", "port": 8000, "secure": False}
+# Напиши код, который проверяет, содержит ли словарь хотя бы один ключ из списка:
+# required_keys = ["host", "token", "user"]
+# Если хотя бы один из этих ключей есть в params, выведи True.
+# Если ни одного — выведи False.
+params = {"host": "localhost", "port": 8000, "secure": False}
+required_keys = ["host", "token", "user"]
+found = False
+for key in required_keys:
+    if key in params:
+        found = True
+        break
+print(found)
+
+# Задача 28.
+# Дан словарь, в котором все значения — строки:
+# env = {"DB_HOST": "127.0.0.1", "DB_PORT": "5432", "DEBUG": "TRUE"}
+# Напиши код, который заменяет все значения в словаре на их версию в нижнем регистре, используя метод .lower().
+# После этого выведи обновлённый словарь.
+env = {"DB_HOST": "127.0.0.1", "DB_PORT": "5432", "DEBUG": "TRUE"}
+for key, value in env.items():
+    value = value.lower()
+    env[key] = value
+print(env)
