@@ -211,3 +211,24 @@ elif 12 <= hour <= 17:
     print("Afternoon")
 elif 18 <= hour <= 23:
     print("Evening")
+
+# Задача 21: Логические операции
+# Создай три логические переменные: a, b, c (присвой им True или False).
+# Напиши условие: если ровно две из трёх переменных равны True, выведи "Two are True".
+a = True
+b = False
+c = True
+if a and b and not c or a and c and not b or b and c and not a:
+    print("Two are True")
+
+# Задача 22: Оператор else
+# Создай переменную balance и присвой ей любое число (целое или дробное).
+# Напиши условие:
+# Если balance больше 0 — выведи "You have money".
+# В противном случае — выведи "No money left".
+# Используй if и else.
+balance = 200
+if balance > 0:
+    print("You have money")
+else:
+    print("No money left")
