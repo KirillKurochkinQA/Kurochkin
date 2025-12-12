@@ -66,7 +66,7 @@ print(square.area())
 # Переопределяет метод get_info(), чтобы он возвращал строку:
 # "Manager: <name>, Department: <department>".
 # Создайте объект класса Manager с именем "Анна" и отделом "Sales", вызовите у него get_info() и выведите результат.
-class Employee():
+class Employee:
     def __init__(self, name):
         self.name = name
     def get_info(self):
@@ -89,7 +89,7 @@ print(manager.get_info())
 # Переопределяет метод turn_on(), чтобы он возвращал:
 # "<name> is on. Running <os>".
 # Создайте объект Smartphone с именем "MyPhone" и ОС "Android", вызовите turn_on() и выведите результат.
-class Device():
+class Device:
     def __init__(self, name):
         self.name = name
     def turn_on(self):
@@ -102,3 +102,127 @@ class Smartphone(Device):
         return f"{self.name} is on. Running {self.os}"
 smartphone = Smartphone("MyPhone", "Android")
 print(smartphone.turn_on())
+
+# Задача №6
+# Создайте базовый класс Book с атрибутами title и author, и методом get_info(), который возвращает строку:
+# "Title: <title>, Author: <author>".
+# Создайте дочерний класс Ebook, который:
+# Наследуется от Book,
+# Дополнительно принимает атрибут file_size (размер файла в МБ),
+# Переопределяет метод get_info(), чтобы он возвращал:
+# "Title: <title>, Author: <author>, File size: <file_size> MB".
+# Создайте объект Ebook с названием "Python Basics", автором "John Doe" и размером файла 5, вызовите get_info() и выведите результат.
+class Book:
+    def __init__(self, title, author):
+        self.title = title
+        self.author = author
+    def get_info(self):
+        return f"Title: {self.title}, Author: {self.author}"
+
+class Ebook(Book):
+    def __init__(self, title, author, file_size):
+        super().__init__(title, author)
+        self.file_size = file_size
+    def get_info(self):
+        return f"Title: {self.title}, Author: {self.author}, File size: {self.file_size} MB"
+
+ebook = Ebook("Python Basics", "John Doe", 5)
+print(ebook.get_info())
+
+# Задача №7
+# Создайте базовый класс Animal с атрибутом name и методом speak(), который возвращает строку:
+# "<name> makes a sound".
+# Создайте два дочерних класса:
+# Cat, который наследуется от Animal и переопределяет speak(), чтобы возвращать:
+# "<name> says meow".
+# Dog, который также наследуется от Animal и переопределяет speak(), чтобы возвращать:
+# "<name> says woof".
+# Создайте по одному объекту каждого класса (Cat и Dog) — например, "Whiskers" и "Buddy" — и выведите результат вызова speak() для каждого.
+class Animal:
+    def __init__(self, name):
+        self.name = name
+    def speak(self):
+        return f"{self.name} makes a sound"
+
+class Cat(Animal):
+    def speak(self):
+        return f"{self.name} says meow"
+
+class Dog(Animal):
+    def speak(self):
+        return f"{self.name} says woof"
+
+cat = Cat("Whiskers")
+dog = Dog("Buddy")
+print(cat.speak())
+print(dog.speak())
+
+# Задача №8
+# Создайте базовый класс Person с атрибутами name и age, и методом introduce(), который возвращает строку:
+# "Hi, I'm <name> and I'm <age> years old."
+# Создайте дочерний класс Student, который:
+# Наследуется от Person,
+# Дополнительно принимает атрибут grade (например, "10th" или 95),
+# Переопределяет метод introduce(), чтобы он возвращал:
+# "Hi, I'm <name>, I'm <age> years old, and my grade is <grade>."
+# Создайте объект Student с именем "Alex", возрастом 16 и оценкой "A", вызовите introduce() и выведите результат.
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    def introduce(self):
+        return f"Hi, I'm {self.name} and I'm {self.age} years old."
+class Student(Person):
+    def __init__(self, name, age, grade):
+        super().__init__(name, age)
+        self.grade = grade
+    def introduce(self):
+        return f"Hi, I'm {self.name} and I'm {self.age} years old, and my grade is {self.grade}."
+student = Student("Alex", 16, "A")
+print(student.introduce())
+
+# Задача №9
+# Создайте базовый класс Appliance с атрибутом brand и методом turn_on(), который возвращает строку:
+# "<brand> appliance is on".
+# Создайте дочерний класс Microwave, который:
+# Наследуется от Appliance,
+# Дополнительно принимает атрибут power (мощность в ваттах, например, 1000),
+# Переопределяет метод turn_on(), чтобы он возвращал:
+# "<brand> microwave is on. Power: <power> W".
+# Создайте объект Microwave с брендом "Samsung" и мощностью 1200, вызовите turn_on() и выведите результат.
+class Appliance:
+    def __init__(self, brand):
+        self.brand = brand
+    def turn_on(self):
+        return f"{self.brand} appliance is on"
+class Microwave(Appliance):
+    def __init__(self, brand, power):
+        super().__init__(brand)
+        self.power = power
+    def turn_on(self):
+        return f"{self.brand} microwave is on. Power: {self.power} W"
+microwave = Microwave("Samsung", 1200)
+print(microwave.turn_on())
+
+# Задача №10
+# Создайте базовый класс Fruit с атрибутом name и методом describe(), который возвращает строку:
+# "This is a <name>."
+# Создайте дочерний класс Citrus, который:
+# Наследуется от Fruit,
+# Дополнительно принимает атрибут vitamin_c (в миллиграммах, например, 53),
+# Переопределяет метод describe(), чтобы он возвращал:
+# "This is a <name>. It contains <vitamin_c> mg of vitamin C."
+# Создайте объект Citrus с названием "Orange" и содержанием витамина C 53, вызовите describe() и выведите результат.
+class Fruit:
+    def __init__(self, name):
+        self.name = name
+    def describe(self):
+        return f"This is a {self.name}."
+class Citrus(Fruit):
+    def __init__(self, name, vitamin_c):
+        super().__init__(name)
+        self.vitamin_c = vitamin_c
+    def describe(self):
+        return f"This is a {self.name}. It contains {self.vitamin_c} mg of vitamin C."
+citrus = Citrus("Orange", 53)
+print(citrus.describe())
