@@ -326,3 +326,23 @@ def greet_user(name, time_of_day = "день"):
     return f"Добрый {time_of_day}, {name}!"
 print(greet_user("Кирилл", "вечер"))
 print(greet_user("Анна"))
+
+# Задача 24
+# Напиши функцию с именем get_square_info, которая:
+# принимает один аргумент — число side (длина стороны квадрата),
+# возвращает сразу два значения:
+# периметр квадрата (4 * side),
+# площадь квадрата (side * side).
+# После определения функции:
+# вызови её с числом 5,
+# сохрани возвращённые значения в две переменные: p и s,
+# выведи их через print() в формате:
+# "Периметр: {p}, Площадь: {s}".
+def get_square_info(side):
+    perimeter = 4 * side
+    area = side ** 2
+    return perimeter, area
+result = get_square_info(5)
+p = result[0]
+s = result[1]
+print(f"Периметр: {p}, Площадь: {s}")
