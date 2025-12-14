@@ -226,3 +226,48 @@ class Citrus(Fruit):
         return f"This is a {self.name}. It contains {self.vitamin_c} mg of vitamin C."
 citrus = Citrus("Orange", 53)
 print(citrus.describe())
+
+# Задача №11
+# Создайте базовый класс Instrument с атрибутом name и методом play(), который возвращает строку:
+# "Playing the <name>."
+# Создайте дочерний класс Piano, который:
+# Наследуется от Instrument,
+# Дополнительно принимает атрибут keys (количество клавиш, например, 88),
+# Переопределяет метод play(), чтобы он возвращал:
+# "Playing the <name> with <keys> keys."
+# Создайте объект Piano с названием "Grand Piano" и количеством клавиш 88, вызовите play() и выведите результат.
+class Instrument:
+    def __init__(self, name):
+        self.name = name
+    def play(self):
+        return f"Playing the {self.name}."
+class Piano(Instrument):
+    def __init__(self, name, keys):
+        super().__init__(name)
+        self.keys = keys
+    def play(self):
+        return f"Playing the {self.name} with {self.keys} keys."
+my_instrument = Piano("Grand Piano", 88)
+print(my_instrument.play())
+
+# Задача №12
+# Создайте базовый класс Vehicle с атрибутом type (например, "vehicle") и методом move(), который возвращает строку:
+# "The <type> is moving."
+# Создайте дочерний класс Bicycle, который:
+# Наследуется от Vehicle,
+# В конструкторе не принимает новых атрибутов, но автоматически устанавливает type = "bicycle" (то есть при создании объекта Bicycle атрибут type должен быть "bicycle"),
+# Переопределяет метод move() так, чтобы он возвращал:
+# "The bicycle is moving quietly."
+# Создайте объект Bicycle и выведите результат вызова его метода move().
+class Vehicle:
+    def __init__(self, type):
+        self.type = type
+    def move(self):
+        return f"The {self.type} is moving."
+class Bicycle(Vehicle):
+    def __init__(self):
+        super().__init__("bicycle")
+    def move(self):
+        return f"The {self.type} is moving quietly."
+my_vehicle = Bicycle()
+print(my_vehicle.move())
