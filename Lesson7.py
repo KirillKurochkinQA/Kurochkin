@@ -80,3 +80,29 @@ with open("notes.txt", "r", encoding='utf-8') as file:
     text = f"В файле notes.txt {len_content} строк"
 with open("summary.txt", "w", encoding='utf-8') as file:
     file.write(text)
+
+# Задача 11
+# Прочитай файл notes.txt и создай файл numbered_notes.txt, в котором каждая строка будет начинаться с номера строки (начиная с 1),
+# затем идёт ": " и сама строка из исходного файла без лишних пустых строк.
+with open("notes.txt", "r", encoding='utf-8') as file_1:
+    with open("numbered_notes.txt", "w", encoding='utf-8') as file_2:
+        line_number = 1
+        for line in file_1:
+            clean_line = line.strip()
+            numbered_line = f"{line_number}: {clean_line}"
+            file_2.write(numbered_line + "\n")
+            line_number += 1
+
+# Задача 12
+# Создай файл empty.txt, полностью пустой (даже без символа новой строки).
+# Используй контекстный менеджер with и подходящий режим открытия файла.
+with open("empty.txt", "w", encoding='utf-8') as file:
+    pass
+
+# Задача 13
+# Прочитай файл notes.txt и запиши его содержимое в обратном порядке строк в файл reversed_notes.txt.
+with open("notes.txt", "r", encoding='utf-8') as file:
+    content = file.readlines()
+    content.reverse()
+with open("reversed_notes.txt", "w", encoding='utf-8') as file:
+    file.write("".join(content))
