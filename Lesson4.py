@@ -232,3 +232,39 @@ if balance > 0:
     print("You have money")
 else:
     print("No money left")
+
+# Задача 23: Логические операции в условиях
+# Создай переменные is_weekend и is_holiday, присвой им логические значения (True или False).
+# Напиши условие: если сегодня выходной ИЛИ праздник, выведи "You can relax".
+# Используй логический оператор or.
+is_weekend = False
+is_holiday = True
+if is_holiday or is_weekend:
+    print("You can relax")
+
+# Задача 24: Тернарный оператор
+# Создай переменную x и присвой ей любое число.
+# Используй тернарный оператор, чтобы присвоить переменной parity значение "even" — если x делится на 2 без остатка, и "odd" — в противном случае.
+# Выведи значение parity.
+x = 2
+parity = "even" if x % 2 == 0 else "odd"
+print(parity)
+
+# Задача 25: Оператор elif
+#
+# Создай переменную score и присвой ей целое число от 0 до 100.
+# Напиши условие:
+# Если score от 90 до 100 — выведи "Excellent".
+# Если score от 75 до 89 — выведи "Good".
+# Если score от 50 до 74 — выведи "Fair".
+# Если score от 0 до 49 — выведи "Needs improvement".
+# Используй if, elif и else. Проверяй диапазоны с помощью логических операций.
+score = 45
+if 90<=score<=100:
+    print("Excellent")
+elif 75<=score<=89:
+    print("Good")
+elif 50<=score<=74:
+    print("Fair")
+elif 0<=score<=49:
+    print("Needs improvement")
