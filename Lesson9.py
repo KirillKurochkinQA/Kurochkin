@@ -241,3 +241,79 @@ class Animal:
         print(f"{self.name} принадлежит к царству {self.kingdom}.")
 my_animal = Animal("Жираф")
 my_animal.classify()
+
+# Задача 16
+# Создай класс Circle.
+# У него не должно быть общих атрибутов.
+# Конструктор должен принимать один аргумент radius и сохранять его как атрибут экземпляра.
+# Добавь метод diameter, который возвращает диаметр окружности (удвоенное значение радиуса).
+# Создай объект этого класса с любым радиусом и выведи на экран его диаметр, используя метод diameter.
+class Circle:
+    def __init__(self, radius):
+        self.radius = radius
+    def diameter(self):
+        return 2 * self.radius
+my_circle = Circle(6)
+print(my_circle.diameter())
+
+# Задача 17
+# Создай класс Laptop.
+# У него не должно быть общих атрибутов.
+# Конструктор должен принимать два аргумента: brand и ram, и сохранять их как атрибуты экземпляра.
+# Добавь метод describe, который выводит строку: "Ноутбук <brand> имеет <ram> ГБ оперативной памяти."
+# Создай объект этого класса с любым брендом и объёмом ОЗУ, затем вызови метод describe.
+class Laptop:
+    def __init__(self, brand, ram):
+        self.brand = brand
+        self.ram = ram
+    def describe(self):
+        print(f"Ноутбук {self.brand} имеет {self.ram} ГБ оперативной памяти.")
+my_laptop = Laptop("Lenovo", 32)
+my_laptop.describe()
+
+# Задача 18
+# Создай класс Clock.
+# У него не должно быть общих атрибутов.
+# Конструктор должен инициализировать атрибут экземпляра time значением "00:00" (строка).
+# Добавь метод set_time, который принимает строку new_time и заменяет значение time на неё.
+# Добавь метод show_time, который выводит текущее значение time.
+# Создай объект этого класса, вызови set_time с любым временем (например, "14:30"), затем вызови show_time.
+class Clock:
+    def __init__(self, time = "00:00"):
+        self.time = time
+    def set_time(self, new_time):
+        self.time = new_time
+    def show_time(self):
+        print(self.time)
+my_clock = Clock()
+my_clock.set_time("14:30")
+my_clock.show_time()
+
+# Задача 19
+# Создай класс Library.
+# У него не должно быть общих атрибутов.
+# Конструктор должен принимать один аргумент name и сохранять его как атрибут экземпляра.
+# Добавь метод greet, который выводит строку: "Добро пожаловать в библиотеку <name>!"
+# Создай объект этого класса с любым названием библиотеки и вызови метод greet.
+class Library:
+    def __init__(self, name):
+        self.name = name
+    def greet(self):
+        print(f"Добро пожаловать в библиотеку {self.name}!")
+my_library = Library("Городская")
+my_library.greet()
+
+# Задача 20
+# Создай класс Temperature.
+# У него не должно быть общих атрибутов.
+# Конструктор должен принимать один аргумент celsius и сохранять его как атрибут экземпляра.
+# Добавь метод to_fahrenheit, который возвращает температуру в градусах Фаренгейта по формуле:
+# fahrenheit = celsius * 9/5 + 32
+# Создай объект этого класса с любым значением температуры в Цельсиях и выведи на экран результат вызова to_fahrenheit.
+class Temperature:
+    def __init__(self, celsius):
+        self.celsius = celsius
+    def to_fahrenheit(self):
+        return (self.celsius * 9 / 5) + 32
+day_temperature = Temperature(27)
+print(day_temperature.to_fahrenheit())
