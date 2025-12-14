@@ -287,3 +287,92 @@ for key, value in env.items():
     value = value.lower()
     env[key] = value
 print(env)
+
+# Задача 29.
+# Дан словарь:
+# data = {"name": "Alice", "score": "95", "active": "true"}
+# Напиши код, который преобразует значения в нужные типы данных по следующим правилам:
+# "score" → целое число (int)
+# "active" → логическое значение (True, если строка "true", иначе False)
+# "name" остаётся строкой (ничего не делаем)
+# После преобразований выведи обновлённый словарь.
+data = {"name": "Alice", "score": "95", "active": "true"}
+data["score"] = int(data["score"])
+data["active"] = data["active"] == "true"
+print(data)
+
+# Задача 30.
+# Дан словарь:
+# config = {"host": "example.com", "port": "80", "ssl": "false"}
+# Напиши код, который:
+# Преобразует значение "port" в целое число.
+# Преобразует значение "ssl" в логическое:
+# True, если строка равна "true" (в нижнем регистре),
+# False, если "false".
+# Остальные значения остаются без изменений.
+# После этого выведи обновлённый словарь.
+config = {"host": "example.com", "port": "80", "ssl": "false"}
+config["port"] = int(config["port"])
+config["ssl"] = config["ssl"] == "true"
+print(config)
+
+# Задача 31.
+# Дан словарь: user_input = {"username": "admin", "password": "secret123", "role": "user"}
+# Напиши код, который очищает значения в словаре от лишних пробелов по краям (если бы они были), используя метод .strip().
+# Даже если в текущем словаре пробелов нет — примени .strip() ко всем значениям, чтобы код работал в общем случае.
+# После обработки выведи обновлённый словарь.
+user_input = {"username": "admin", "password": "secret123", "role": "user"}
+for key, value in user_input.items():
+    user_input[key] = value.strip()
+print(user_input)
+
+# Задача 32.
+# Дан словарь:raw_data = {"name": "  Kirill  ", "city": "  Moscow ", "status": " active "}
+# Напиши код, который удаляет лишние пробелы в начале и конце каждого значения (с помощью .strip()) и заменяет значение "active" (после очистки) на булево True.
+# После всех преобразований выведи обновлённый словарь.
+raw_data = {"name": "  Kirill  ", "city": "  Moscow ", "status": " active "}
+for key, value in raw_data.items():
+    raw_data[key] = value.strip()
+    if raw_data[key] == "active":
+        raw_data[key] = True
+print(raw_data)
+
+# Задача 33.
+# Дан словарь: data = {"id": "101", "valid": "yes", "count": "0"}
+# Напиши код, который преобразует значения по следующим правилам:
+# "id" → целое число (int)
+# "valid" → True, если значение "yes"; False, если "no"
+# "count" → целое число (int)
+# После преобразований выведи обновлённый словарь.
+data = {"id": "101", "valid": "yes", "count": "0"}
+data["id"] = int(data["id"])
+data["valid"] = data["valid"] == "yes"
+data["count"] = int(data["count"])
+print(data)
+
+# Задача 34.
+# Дан словарь: flags = {"feature_x": "on", "feature_y": "off", "debug_mode": "on"}
+# Напиши код, который заменяет значения в словаре по следующему правилу:
+# "on" → True
+# "off" → False
+# Остальные возможные значения (если бы они были) оставляй без изменений.
+# Выведи обновлённый словарь.
+flags = {"feature_x": "on", "feature_y": "off", "debug_mode": "on"}
+for key, value in flags.items():
+    if flags[key] == "on":
+        flags[key] = True
+    elif flags[key] == "off":
+        flags[key] = False
+print(flags)
+
+# Задача 35.
+# Дан словарь: metadata = {"version": "2.1", "public": "true", "downloads": "1500"}
+# Напиши код, который преобразует значения по следующим правилам:
+# "version" остаётся строкой (без изменений),
+# "public" → True, если значение "true"; иначе False,
+# "downloads" → целое число (int).
+# После преобразований выведи обновлённый словарь.
+metadata = {"version": "2.1", "public": "true", "downloads": "1500"}
+metadata["public"] = metadata["public"] == "true"
+metadata["downloads"] = int(metadata["downloads"])
+print(metadata)
