@@ -450,3 +450,109 @@ def sum_positive(*args):
     return parts
 print(sum_positive(1, -2, 3, 0, 4))
 print(sum_positive(-1, -5, 0))
+
+# Задача 31
+# Напиши декоратор без параметров с именем to_upper, который:
+# принимает функцию,
+# возвращает обёртку (wrapper),
+# обёртка принимает любые аргументы (*args, **kwargs),
+# вызывает исходную функцию,
+# преобразует её результат в верхний регистр с помощью .upper(),
+# и возвращает получившуюся строку.
+# Протестируй декоратор на двух функциях:
+# @to_upper
+# def greet(name):
+#     return f"привет, {name}!"
+#
+# @to_upper
+# def status():
+#     return "всё в порядке"
+def to_upper(func):
+    def wrapper(*args, **kwargs):
+        result = func(*args, **kwargs)
+        new_result = result.upper()
+        return new_result
+    return wrapper
+@to_upper
+def greet(name):
+    return f"Привет {name}!"
+
+@to_upper
+def status():
+    return "всё в порядке"
+
+print(greet("Кирилл"))
+print(status())
+
+# Задача 32
+# Напиши декоратор с параметром с именем repeat, который:
+# принимает целое число n (количество повторов),
+# возвращает декоратор,
+# который, в свою очередь, принимает функцию,
+# и заменяет её на обёртку, которая:
+# вызывает исходную функцию n раз подряд,
+# собирает все её результаты в список,
+# и возвращает этот список.
+def repeat(n):
+    def decorator(func):
+        def wrapper(*args, **kwargs):
+            result = []
+            for i in range(n):
+                result.append(func(*args, **kwargs))
+            return result
+        return wrapper
+    return decorator
+@repeat(3)
+def say_hello():
+    return "Привет!"
+print(say_hello())
+
+# Задача 33
+# Напиши декоратор без параметров с именем log_args, который:
+# принимает функцию,
+# возвращает обёртку (wrapper),
+# обёртка принимает любые аргументы (*args, **kwargs),
+# печатает (с помощью print) все переданные позиционные аргументы в формате:
+# Позиционные: (arg1, arg2, ...),
+# печатает все именованные аргументы в формате:
+# Именованные: {key1: value1, key2: value2, ...},
+# затем вызывает исходную функцию с этими аргументами,
+# и возвращает её результат (без изменений).
+def log_args(func):
+    def wrapper(*args, **kwargs):
+            print(f"Позиционные: {args}")
+            print(f"Именованные: {kwargs}")
+            return func(*args, **kwargs)
+    return wrapper
+@log_args
+def multiply(a, b, verbose=False):
+    return a * b
+print(multiply(4, 5, verbose=True))
+
+# Задача 34
+# Напиши декоратор без параметров с именем ensure_string, который:
+# принимает функцию,
+# возвращает обёртку (wrapper),
+# обёртка принимает любые аргументы (*args, **kwargs),
+# вызывает исходную функцию,
+# проверяет, что её результат — это строка (type(result) is str),
+# если это строка — возвращает её как есть,
+# если это не строка — преобразует результат в строку с помощью str() и возвращает.
+def ensure_string(func):
+    def wrapper(*args, **kwargs):
+        result = func(*args, **kwargs)
+        if type(result) == str:
+            return result
+        else:
+            return str(result)
+    return wrapper
+@ensure_string
+def get_number():
+    return 42
+print(get_number())
+print(type(get_number()))
+@ensure_string
+def get_text():
+    return "Привет"
+print(get_text())
+print(type(get_text()))
