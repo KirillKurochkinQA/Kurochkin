@@ -376,3 +376,31 @@ metadata = {"version": "2.1", "public": "true", "downloads": "1500"}
 metadata["public"] = metadata["public"] == "true"
 metadata["downloads"] = int(metadata["downloads"])
 print(metadata)
+
+# Задача 36.
+# Дан словарь: options = {"auto_save": "1", "dark_theme": "0", "notifications": "1"}
+# Напиши код, который преобразует все значения в словаре в булевый тип по следующему правилу:
+# "1" → True
+# "0" → False
+# После преобразования выведи обновлённый словарь.
+options = {"auto_save": "1", "dark_theme": "0", "notifications": "1"}
+for key, value in options.items():
+    if options[key] == "1":
+        options[key] = True
+    elif options[key] == "0":
+        options[key] = False
+print(options)
+
+# Задача 37.
+# Дан словарь: settings = {"timeout": "30", "retries": "0", "verbose": "true", "log_level": "info"}
+# Напиши код, который преобразует значения только для следующих ключей:
+# "timeout" → целое число (int)
+# "retries" → целое число (int)
+# "verbose" → True, если значение "true"; иначе False
+# Ключ "log_level" должен остаться без изменений (остаётся строкой).
+# После преобразований выведи обновлённый словарь.
+settings = {"timeout": "30", "retries": "0", "verbose": "true", "log_level": "info"}
+settings["timeout"] = int(settings["timeout"])
+settings["retries"] = int(settings["retries"])
+settings["verbose"] = True if settings["verbose"] == "true" else False
+print(settings)
