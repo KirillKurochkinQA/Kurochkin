@@ -2,6 +2,8 @@
 # Создай переменную score и присвой ей любое числовое значение от 0 до 100.
 # Напиши условие: если score больше или равно 50, выведи строку "Passed", в противном случае ничего не выводи.
 # Пока не используем else, только if.
+from Lesson5 import user_input
+
 score = 10
 if score >= 50:
     print("Passed")
@@ -268,3 +270,54 @@ elif 50<=score<=74:
     print("Fair")
 elif 0<=score<=49:
     print("Needs improvement")
+
+# Задача 26: Логические операции
+# Создай переменные x и y и присвой им любые числа.
+# Напиши условие: если оба числа положительные ИЛИ оба числа отрицательные, выведи "Same sign".
+# Используй логические операторы and и or.
+x = 25
+y = 2
+if x > 0 and y > 0 or x < 0 and y < 0:
+    print("Same sign")
+
+# Задача 27: Оператор if
+# Создай переменную user_input и присвой ей строку (например, введённую пользователем команду).
+# Напиши условие: если user_input равно "quit", выведи "Exiting...".
+# Не используй else.
+# user_input = input()
+if user_input == "quit":
+    print("Exiting...")
+
+# Задача 28: Тернарный оператор
+# Создай переменную age и присвой ей любое целое число.
+# Используй тернарный оператор, чтобы присвоить переменной status значение "adult" — если age больше или равно 18, и "minor" — в противном случае.
+# Выведи значение status.
+age = 29
+status = "adult" if age >= 18 else "minor"
+print(status)
+
+# Задача 29: Логические операции в условиях
+# Создай переменные has_ticket и is_vip, присвой им логические значения (True или False).
+# Напиши условие: если у человека есть билет ИЛИ он VIP, выведи "Access allowed".
+# Используй оператор or.
+has_ticket = True
+is_vip = False
+if has_ticket or is_vip:
+    print("Access allowed")
+
+# Задача 30: Оператор elif
+# Создай переменную temperature и присвой ей любое число (целое или дробное).
+# Напиши условие:
+# Если temperature меньше 0 — выведи "Freezing".
+# Если temperature от 0 до 15 включительно — выведи "Cold".
+# Если temperature от 16 до 25 включительно — выведи "Mild".
+# Если temperature больше 25 — выведи "Hot".
+temperature = 21
+if temperature < 0:
+    print("Freezing")
+elif 0<=temperature<=15:
+    print("Cold")
+elif 16<=temperature<=25:
+    print("Mild")
+elif temperature > 25:
+    print("Hot")
