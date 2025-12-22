@@ -271,3 +271,52 @@ class Bicycle(Vehicle):
         return f"The {self.type} is moving quietly."
 my_vehicle = Bicycle()
 print(my_vehicle.move())
+
+# Задача №13
+# Создайте базовый класс Writer с атрибутом name и методом write(), который возвращает строку:
+# "<name> is writing."
+# Создайте дочерний класс Novelist, который:
+# Наследуется от Writer,
+# Дополнительно принимает атрибут genre (например, "fantasy"),
+# Переопределяет метод write(), чтобы он возвращал:
+# "<name> is writing a <genre> novel."
+# Создайте объект Novelist с именем "Tolkien" и жанром "fantasy", вызовите метод write() и выведите результат
+class Writer:
+    def __init__(self, name):
+        self.name = name
+    def write(self):
+        return f"{self.name} is writing."
+
+class Novelist(Writer):
+    def __init__(self, name, genre):
+        super().__init__(name)
+        self.genre = genre
+    def write(self):
+        return f"{self.name} is writing a {self.genre} novel."
+
+my_object = Novelist("Tolkien", "fantasy")
+print(my_object.write())
+
+# Задача №14
+# Создайте базовый класс Room с атрибутом name и методом describe(), который возвращает строку:
+# "This is the <name>."
+# Создайте дочерний класс Kitchen, который:
+# Наследуется от Room,
+# Дополнительно принимает атрибут appliances (список устройств, например, ["fridge", "oven"]),
+# Переопределяет метод describe(), чтобы он возвращал:
+# "This is the <name>. Appliances: <appliances>."
+# (где <appliances> — это список, например: ['fridge', 'oven'])
+# Создайте объект Kitchen с именем "Main Kitchen" и списком устройств ["fridge", "microwave"], вызовите describe() и выведите результат.
+class Room:
+    def __init__(self, name):
+        self.name = name
+    def describe(self):
+        return f"This is the {self.name}."
+class Kitchen(Room):
+    def __init__(self, name, appliances):
+        super().__init__(name)
+        self.appliances = appliances
+    def describe(self):
+        return f"This is the {self.name}. Appliances: {self.appliances}"
+my_object = Kitchen("Main Kitchen", ["fridge", "microwave"].)
+print(my_object.describe())
