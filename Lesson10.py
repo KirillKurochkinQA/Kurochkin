@@ -318,5 +318,5 @@ class Kitchen(Room):
         self.appliances = appliances
     def describe(self):
         return f"This is the {self.name}. Appliances: {self.appliances}"
-my_object = Kitchen("Main Kitchen", ["fridge", "microwave"].)
+my_object = Kitchen("Main Kitchen", ["fridge", "microwave"])
 print(my_object.describe())
