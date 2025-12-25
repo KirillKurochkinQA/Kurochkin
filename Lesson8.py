@@ -556,3 +556,64 @@ def get_text():
     return "Привет"
 print(get_text())
 print(type(get_text()))
+
+# Задача 35
+# Напиши функцию с именем validate_email, которая:
+# принимает одну строку — предполагаемый email,
+# возвращает True, если email содержит ровно один символ @ и хотя бы одну точку после @,
+# и возвращает False во всех остальных случаях.
+def validate_email(email):
+    if email.count("@") != 1:
+        return False
+    at_index = email.find("@")
+    domain = email[at_index + 1:]
+    return "." in domain
+print(validate_email("kirill@gmail.com"))
+print(validate_email("anna@mail"))
+
+# Задача 36
+# Напиши функцию say_hello, которая:
+# не принимает никаких аргументов,
+# возвращает строку: "Привет!".
+# Вызови эту функцию и выведи её результат с помощью print().
+def say_hello():
+    return "Привет!"
+print(say_hello())
+
+# Задача 37
+# Напиши функцию greet_by_name, которая:
+# принимает один аргумент — name (строка),
+# возвращает строку: "Привет, {name}!".
+def greet_by_name(name):
+    return f"Привет, {name}!"
+print(greet_by_name("Kirill"))
+
+# Задача 38
+# Напиши функцию add, которая:
+# принимает два числа — a и b,
+# возвращает их сумму.
+def add(a, b):
+    return a + b
+print(add(1, 2))
+
+# Задача 39
+# Напиши функцию is_even, которая:
+# принимает одно целое число — n,
+# возвращает True, если число чётное,
+# и возвращает False, если нечётное.
+def is_even(n):
+    return n % 2 == 0
+print(is_even(5))
+print(is_even(4))
+
+# Задача 40
+# Напиши функцию get_max, которая:
+# принимает два числа — a и b,
+# возвращает большее из них.
+def get_max(a, b):
+    if a > b:
+        return a
+    else:
+        return b
+print(get_max(1, 2))
+print(get_max(-2, -3))
