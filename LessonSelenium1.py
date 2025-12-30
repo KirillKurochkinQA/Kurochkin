@@ -21,5 +21,5 @@ driver.quit()
 driver = webdriver.Chrome()
 driver.get("https://www.saucedemo.com/")
 assert len(driver.find_elements("xpath", "//input[@data-test='username']")) == 1, f"Неверное количество полей ввода логина: {len(driver.find_elements("xpath", "//input[@data-test='username']"))}"
-print("Тест на проверку поля ввода логина прошел успешно")
+print("Тест на проверку наличия поля ввода логина прошел успешно")
 driver.quit()
