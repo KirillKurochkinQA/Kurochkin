@@ -1,0 +1,271 @@
+[
+    {
+        "domain": "www.stoloto.ru",
+        "expiry": 1769936735,
+        "httpOnly": false,
+        "name": "domain_sid",
+        "path": "/",
+        "sameSite": "Lax",
+        "secure": false,
+        "value": "BU-UP9kag3fG3229V4Pd6%3A1769331935106"
+    },
+    {
+        "domain": ".stoloto.ru",
+        "expiry": 1803891935,
+        "httpOnly": false,
+        "name": "uxs_uid",
+        "path": "/",
+        "sameSite": "Lax",
+        "secure": false,
+        "value": "024a6fd0-f9cd-11f0-9606-938d5a1989b4"
+    },
+    {
+        "domain": "www.stoloto.ru",
+        "expiry": 1798103135,
+        "httpOnly": false,
+        "name": "flocktory-uuid",
+        "path": "/",
+        "sameSite": "Lax",
+        "secure": false,
+        "value": "bb8e2759-893a-4cd9-9b05-2dcefc02a321-9"
+    },
+    {
+        "domain": ".stoloto.ru",
+        "expiry": 1771923934,
+        "httpOnly": false,
+        "name": "advcake_track_url",
+        "path": "/",
+        "sameSite": "None",
+        "secure": true,
+        "value": "%3D20250113moRMeJ5DEaqhDlmNDmfplWqNQIfkOYsnLoTAARMB8gAGi9CyC9GVeCMwVj0whudZeV9qxIIxdrD2AKGkkHwxiGMzl%2FPLyDmDuMTusSgzxYR%2FUvPDMK40LPlSIQqQ5926TUkVwajf3iJt2BU%2FeyHBmJdSsn1Bmi%2B2Z5PLmxYECIn6mrBomCS1dNoMRUfNvQmg9pd6EsZao%2B5QuuBrRO5SfLD5gn%2BkAv3Neb59D6WTAibMNtT%2B%2F6KVKp0Q6Jmt7i%2Bg8jDrWsDHhWBvIVhDgrul6XoVZI030jWGqG54LsXF1R%2FFCL6HSsuNIdQN9sQdtZMoNsmv9lHU0XV%2FlA%2FBA%2FtVeRM5blb0ox9jKFbMluQu%2BaypOjD8ETxJgYfeJoX41QT1g%2FNCpMrYQw38fzisk%2FllJnIXcPP7pLf1QsUD29WcyoqPZ%2B1KbqyNR10OIu8bFzRiedtqDudnyPqFJde%2BWoZC2qUtHAvPZSH%2B428bIe4t04XDB8dGjV%2Btj1sdiF8zYQRayFubxmSbFrRR3RA3D43hUgF27%2B2K0uBsDjXtGfXyNCr0RH8esSQxE6qT46%2FSf8XUlweztN2U3HqkTHC6xBZz6gY%2Bif6za%2FFFVGOvgn4z%2B%2BlIUZrHzJ%2BjT3BwJnJ0%2BDbDnOOHxXxWdMf%2B%2BVYNEgwJyMKf%2FN9yW%2BOzRMV9rvN%2BKUhkF3PRYGJnENg%3D"
+    },
+    {
+        "domain": "www.stoloto.ru",
+        "expiry": 1800867935,
+        "httpOnly": false,
+        "name": "_ymab_param",
+        "path": "/",
+        "sameSite": "None",
+        "secure": true,
+        "value": "CYNzGH35zVzWRGYDkrdyIfUFRe56wsGmnJoYF1V-dr0TR_SVqEqEqQd4YCxGR_MhSvQTG1Cb9JQXFeVjS4dpQSU01Zo"
+    },
+    {
+        "domain": ".www.stoloto.ru",
+        "expiry": 1803891934,
+        "httpOnly": false,
+        "name": "acs_3",
+        "path": "/",
+        "sameSite": "None",
+        "secure": true,
+        "value": "%7B%22hash%22%3A%221aa3f9523ee6c2690cb34fc702d4143056487c0d%22%2C%22nst%22%3A1769418334475%2C%22sl%22%3A%7B%22224%22%3A1769331934475%2C%221228%22%3A1769331934475%7D%7D"
+    },
+    {
+        "domain": ".stoloto.ru",
+        "expiry": 1800867934,
+        "httpOnly": false,
+        "name": "adtech_uid",
+        "path": "/",
+        "sameSite": "Lax",
+        "secure": true,
+        "value": "25e13fd0-1bd3-454c-8101-bb65eca3e694%3Astoloto.ru"
+    },
+    {
+        "domain": ".stoloto.ru",
+        "expiry": 1771923934,
+        "httpOnly": false,
+        "name": "advcake_session_id",
+        "path": "/",
+        "sameSite": "None",
+        "secure": true,
+        "value": "c8774281-3c00-7f3d-a176-e4e6a4bac057"
+    },
+    {
+        "domain": ".stoloto.ru",
+        "expiry": 1771923934,
+        "httpOnly": false,
+        "name": "advcake_track_id",
+        "path": "/",
+        "sameSite": "None",
+        "secure": true,
+        "value": "0ba6e1f9-dd38-925a-6f23-2f5edbfb0557"
+    },
+    {
+        "domain": ".stoloto.ru",
+        "expiry": 1800867932,
+        "httpOnly": false,
+        "name": "_ym_uid",
+        "path": "/",
+        "sameSite": "None",
+        "secure": true,
+        "value": "1769331932797478660"
+    },
+    {
+        "domain": ".stoloto.ru",
+        "httpOnly": false,
+        "name": "fingerprint",
+        "path": "/",
+        "sameSite": "Lax",
+        "secure": true,
+        "value": "30329408"
+    },
+    {
+        "domain": ".stoloto.ru",
+        "expiry": 1771131935,
+        "httpOnly": false,
+        "name": "sign-in",
+        "path": "/",
+        "sameSite": "None",
+        "secure": true,
+        "value": "+79299115035"
+    },
+    {
+        "domain": ".www.stoloto.ru",
+        "expiry": 1803891933,
+        "httpOnly": false,
+        "name": "adrdel",
+        "path": "/",
+        "sameSite": "None",
+        "secure": true,
+        "value": "1769331933991"
+    },
+    {
+        "domain": ".stoloto.ru",
+        "expiry": 1769936734,
+        "httpOnly": false,
+        "name": "AF_SYNC",
+        "path": "/",
+        "sameSite": "Lax",
+        "secure": false,
+        "value": "1769331934925"
+    },
+    {
+        "domain": ".stoloto.ru",
+        "expiry": 1803891934,
+        "httpOnly": false,
+        "name": "afUserId",
+        "path": "/",
+        "sameSite": "Lax",
+        "secure": false,
+        "value": "90b9ff2d-7e9a-4bef-a8c8-5644b8a768bc-p"
+    },
+    {
+        "domain": ".www.stoloto.ru",
+        "expiry": 1803891933,
+        "httpOnly": false,
+        "name": "adrcid",
+        "path": "/",
+        "sameSite": "None",
+        "secure": true,
+        "value": "A9MMelyLGppI62C1hUSSCfA"
+    },
+    {
+        "domain": ".stoloto.ru",
+        "expiry": 1800867934,
+        "httpOnly": false,
+        "name": "t3_sid_7713245",
+        "path": "/",
+        "sameSite": "Lax",
+        "secure": false,
+        "value": "s1.211828114.1769331934447.1769331934511.1.3.1.0.."
+    },
+    {
+        "domain": ".stoloto.ru",
+        "expiry": 1803891934,
+        "httpOnly": false,
+        "name": "acs_3",
+        "path": "/",
+        "sameSite": "None",
+        "secure": true,
+        "value": "%7B%22hash%22%3A%221aa3f9523ee6c2690cb34fc702d4143056487c0d%22%2C%22nst%22%3A1769418334475%2C%22sl%22%3A%7B%22224%22%3A1769331934475%2C%221228%22%3A1769331934475%7D%7D"
+    },
+    {
+        "domain": ".stoloto.ru",
+        "expiry": 1800867934,
+        "httpOnly": false,
+        "name": "gnezdo_uid",
+        "path": "/",
+        "sameSite": "None",
+        "secure": true,
+        "value": "19bf466c33259975c94d3b4b8"
+    },
+    {
+        "domain": ".stoloto.ru",
+        "expiry": 1800867934,
+        "httpOnly": false,
+        "name": "top100_id",
+        "path": "/",
+        "sameSite": "Lax",
+        "secure": false,
+        "value": "t1.7713245.63806439.1769331934446"
+    },
+    {
+        "domain": ".stoloto.ru",
+        "expiry": 1803891933,
+        "httpOnly": false,
+        "name": "adrcid",
+        "path": "/",
+        "sameSite": "None",
+        "secure": true,
+        "value": "A9MMelyLGppI62C1hUSSCfA"
+    },
+    {
+        "domain": ".stoloto.ru",
+        "expiry": 1800867932,
+        "httpOnly": false,
+        "name": "_ym_d",
+        "path": "/",
+        "sameSite": "None",
+        "secure": true,
+        "value": "1769331932"
+    },
+    {
+        "domain": ".stoloto.ru",
+        "expiry": 1803891933,
+        "httpOnly": false,
+        "name": "adrdel",
+        "path": "/",
+        "sameSite": "None",
+        "secure": true,
+        "value": "1769331933991"
+    },
+    {
+        "domain": ".stoloto.ru",
+        "expiry": 1798103133,
+        "httpOnly": false,
+        "name": "tmr_lvidTS",
+        "path": "/",
+        "sameSite": "Lax",
+        "secure": false,
+        "value": "1769331933913"
+    },
+    {
+        "domain": ".stoloto.ru",
+        "expiry": 1769333733,
+        "httpOnly": false,
+        "name": "_ym_visorc",
+        "path": "/",
+        "sameSite": "None",
+        "secure": true,
+        "value": "b"
+    },
+    {
+        "domain": ".stoloto.ru",
+        "expiry": 1769403932,
+        "httpOnly": false,
+        "name": "_ym_isad",
+        "path": "/",
+        "sameSite": "None",
+        "secure": true,
+        "value": "2"
+    },
+    {
+        "domain": ".stoloto.ru",
+        "expiry": 1798103133,
+        "httpOnly": false,
+        "name": "tmr_lvid",
+        "path": "/",
+        "sameSite": "Lax",
+        "secure": false,
+        "value": "0f7cb2a464bfcab1a8743ba25a758529"
+    }
+]
