@@ -1,4 +1,4 @@
-# Переход с главной на страницу авторизации
+# Авторизация в аккаунте
 import time
 
 from selenium import webdriver
@@ -14,18 +14,26 @@ options.add_argument("--disable-blink-features=AutomationControlled")
 options.add_experimental_option("excludeSwitches", ["enable-automation"])
 options.add_experimental_option('useAutomationExtension', False)
 
-AUTH_BUTTON = ("xpath", "//a[@href='/auth']")
 BASE_URL = "https://www.stoloto.ru/"
+TELEPHONE_FIELD = ("xpath", "//input[@inputmode='tel']")
+CONTINUE_BUTTON = ("xpath", "//button[text()='Продолжить']")
+PASSWORD_FIELD = ("xpath", "//input[@type='password']")
+AUTH_BUTTON = ("xpath", "//button[text()='Войти']")
 
 driver = webdriver.Chrome(options=options)
-driver.get(BASE_URL)
-
+driver.get(f"{BASE_URL}auth")
 wait = WebDriverWait(driver, timeout=10, poll_frequency=0.5)
 
-wait.until(EC.url_contains(BASE_URL))
-auth_button = wait.until(EC.element_to_be_clickable((AUTH_BUTTON)))
+wait.until(EC.element_to_be_clickable(TELEPHONE_FIELD)).clear()
+driver.find_element(*TELEPHONE_FIELD).send_keys("+79299115035")
 
-auth_button.click()
-wait.until(EC.url_contains(f"{BASE_URL}auth"))
+wait.until(EC.element_to_be_clickable(CONTINUE_BUTTON)).click()
+
+wait.until(EC.url_to_be(f"{BASE_URL}auth/login?available=SMS_CODE&from=reg_phone&passwordless=0"))
+
+wait.until(EC.element_to_be_clickable(PASSWORD_FIELD)).clear()
+driver.find_element(*PASSWORD_FIELD).send_keys("123456")
+
+wait.until(EC.element_to_be_clickable(AUTH_BUTTON)).click()
 
 driver.quit()
