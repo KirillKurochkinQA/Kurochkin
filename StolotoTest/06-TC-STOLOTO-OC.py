@@ -1,9 +1,10 @@
-# Переход в личный кабинет после авторизации со страницы кошелька
+# Переход на страницу Промокоды их хэдера меню
 import time
 
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.action_chains import ActionChains
 
 options = webdriver.ChromeOptions()
 options.add_argument('--incognito')
@@ -19,9 +20,7 @@ TELEPHONE_FIELD = ("xpath", "//input[@inputmode='tel']")
 CONTINUE_BUTTON = ("xpath", "//button[text()='Продолжить']")
 PASSWORD_FIELD = ("xpath", "//input[@type='password']")
 AUTH_BUTTON = ("xpath", "//button[text()='Войти']")
-BALANCE_BUTTON = ("xpath", "//span[@class='Account_balance__pONDE']")
 RL_IMAGE_AFTER_AUTH = ("xpath", "//img[@alt='splash_rl_1722_06w_05_01']")
-PROFILE_BUTTON_IN_LK = ("xpath", "//span[text()='Профиль']")
 
 driver = webdriver.Chrome(options=options)
 driver.get(f"{BASE_URL}auth")
@@ -41,14 +40,15 @@ wait.until(EC.element_to_be_clickable(AUTH_BUTTON)).click()
 wait.until(EC.visibility_of_element_located(RL_IMAGE_AFTER_AUTH))
 driver.find_element("xpath", "//button[@class='CloseButton_btn__Y3PWt Modal_closeBtn__aapH7']").click()
 
+MENU_HEADER_LOCATOR = ("xpath", "//span[text()='Меню']")
+PROMOCODES_IN_MENU_HEADER_LOCATOR = ("xpath", "//a[text()='Промокоды']")
 
-wait.until(EC.element_to_be_clickable(BALANCE_BUTTON)).click()
+MENU_HEADER = driver.find_element(*MENU_HEADER_LOCATOR)
+PROMOCODES_IN_MENU_HEADER = driver.find_element(*PROMOCODES_IN_MENU_HEADER_LOCATOR)
 
-wait.until(EC.url_to_be(f"{BASE_URL}private/wallet?int=header"))
+action = ActionChains(driver)
 
-
-wait.until(EC.element_to_be_clickable(PROFILE_BUTTON_IN_LK)).click()
-
-wait.until(EC.url_to_be(f"{BASE_URL}private/data"))
+action.move_to_element(MENU_HEADER).move_to_element(PROMOCODES_IN_MENU_HEADER).click().perform()
+wait.until(EC.url_to_be(f"{BASE_URL}private/promocodes/?int=sitemap"))
 
 driver.quit()
