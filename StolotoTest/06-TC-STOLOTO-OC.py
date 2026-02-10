@@ -20,7 +20,8 @@ TELEPHONE_FIELD = ("xpath", "//input[@inputmode='tel']")
 CONTINUE_BUTTON = ("xpath", "//button[text()='Продолжить']")
 PASSWORD_FIELD = ("xpath", "//input[@type='password']")
 AUTH_BUTTON = ("xpath", "//button[text()='Войти']")
-RL_IMAGE_AFTER_AUTH = ("xpath", "//img[@alt='splash_rl_1722_06w_05_01']")
+RL_IMAGE_AFTER_AUTH = ("xpath", "//img[@class='DialogItem_img__cRhjI']")
+CLOSE_BUTTON = ("xpath", "//button[@class='CloseButton_btn__Y3PWt Modal_closeBtn__aapH7']")
 
 driver = webdriver.Chrome(options=options)
 driver.get(f"{BASE_URL}auth")
@@ -38,7 +39,7 @@ wait.until(EC.element_to_be_clickable(PASSWORD_FIELD)).send_keys("123456")
 wait.until(EC.element_to_be_clickable(AUTH_BUTTON)).click()
 
 wait.until(EC.visibility_of_element_located(RL_IMAGE_AFTER_AUTH))
-driver.find_element("xpath", "//button[@class='CloseButton_btn__Y3PWt Modal_closeBtn__aapH7']").click()
+driver.find_element(*CLOSE_BUTTON).click()
 
 MENU_HEADER_LOCATOR = ("xpath", "//span[text()='Меню']")
 PROMOCODES_IN_MENU_HEADER_LOCATOR = ("xpath", "//a[text()='Промокоды']")
