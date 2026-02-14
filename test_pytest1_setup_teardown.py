@@ -1,5 +1,6 @@
-from selenium import webdriver
+### Пред и Пост условия
 
+from selenium import webdriver
 
 class TestLogin: # Название тестового класса
 

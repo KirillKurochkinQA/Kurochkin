@@ -1,5 +1,6 @@
-from selenium import webdriver
+### Пример теста на отправку формы:
 
+from selenium import webdriver
 
 class TestExample:
 

@@ -1,5 +1,6 @@
-from selenium import webdriver
+### Создание тестовых методов (тестов)
 
+from selenium import webdriver
 
 class TestLogin: # Название тестового класса
 
