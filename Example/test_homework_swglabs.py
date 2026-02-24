@@ -12,8 +12,8 @@ LOGIN = "standard_user"
 PASSWORD = "secret_sauce"
 
 @allure.epic("Swag Labs")
-@allure.feature("Login and buy")
-@allure.story("Pages")
+@allure.feature("Login, buy, logout")
+@allure.story("Buy Inventory from Cart")
 @pytest.mark.usefixtures("driver")
 class TestBuyInventory:
 
