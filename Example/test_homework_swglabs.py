@@ -1,7 +1,7 @@
-import time
+# import time
 import pytest
-from selenium import webdriver
-from selenium.webdriver.support.ui import WebDriverWait
+# from selenium import webdriver
+# from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import allure
 from allure_commons.types import Severity
@@ -10,9 +10,6 @@ from allure_commons.types import AttachmentType
 BASE_URL = "https://www.saucedemo.com/"
 LOGIN = "standard_user"
 PASSWORD = "secret_sauce"
-FIRST_NAME = "Kirill"
-LAST_NAME = "Kurochkin"
-POSTAL_CODE = "149985"
 
 @allure.epic("Swag Labs")
 @allure.feature("Login and buy")
@@ -102,7 +99,7 @@ class TestBuyInventory:
                 attachment_type=allure.attachment_type.PNG
             )
 
-        with allure.step("Пользователь вводит имя, фамилтю и почтовый индекс"):
+        with allure.step("Пользователь вводит имя, фамилию и почтовый индекс"):
             first_name_field = self.driver.find_element("xpath", "//input[@id='first-name']")
             first_name_field.clear()
             first_name_field.send_keys(self.first_name)
@@ -120,5 +117,62 @@ class TestBuyInventory:
             allure.attach(
                 body=self.driver.get_screenshot_as_png(),
                 name="Поля успешно заполнены",
+                attachment_type=allure.attachment_type.PNG
+            )
+            user_data = f"Имя: {self.first_name}\nФамилия: {self.last_name}\nИндекс: {self.postal_code}"
+            allure.attach(
+                body=user_data,
+                name="Сгенерированные данные пользователя",
+                attachment_type=allure.attachment_type.TEXT
+            )
+
+        with allure.step("Пользователь нажимает на кнопку Продолжить"):
+            continue_button = self.driver.find_element("xpath", "//input[@id='continue']")
+            continue_button.click()
+        with allure.step("Пользователь проверяет что совершился переход на страницу второго шага оформления товара"):
+            self.wait.until(EC.url_to_be(f"{BASE_URL}checkout-step-two.html"))
+            assert self.driver.current_url == f"{BASE_URL}checkout-step-two.html", "URL не совпадает с ожидаемым результатом"
+            allure.attach(
+                body=self.driver.get_screenshot_as_png(),
+                name="Страница второго шага оформления товара",
+                attachment_type=allure.attachment_type.PNG
+            )
+
+        with allure.step("Пользователь завершает оформление покупки и нажимает на кнопку Финиш"):
+            finish_button = self.driver.find_element("xpath", "//button[@id='finish']")
+            finish_button.click()
+        with allure.step("Пользователь проверяет переход на страницу успешного офорлмения заказа"):
+            self.wait.until(EC.url_to_be(f"{BASE_URL}checkout-complete.html"))
+            assert self.driver.current_url == f"{BASE_URL}checkout-complete.html", "URL не совпадает с ожидаемым результатом"
+            allure.attach(
+                body=self.driver.get_screenshot_as_png(),
+                name="Страница успешного оформления заказа",
+                attachment_type=allure.attachment_type.PNG
+            )
+
+        with allure.step("Пользователь нажимает на кнопку вернутся на главную"):
+            back_home_button = self.driver.find_element("xpath", "//button[@id='back-to-products']")
+            back_home_button.click()
+        with allure.step("Пользователь проверяет что состоялся переход на главную"):
+            self.wait.until(EC.url_to_be(f"{BASE_URL}inventory.html"))
+            assert self.driver.current_url == f"{BASE_URL}inventory.html", "URL не совпадает с ожидаемым результатом"
+            allure.attach(
+                body=self.driver.get_screenshot_as_png(),
+                name="Главная страница после покупки",
+                attachment_type=allure.attachment_type.PNG
+            )
+        with allure.step("Пользователь раскрывает бургер-меню"):
+            burger_button = self.driver.find_element("xpath", "//button[@id='react-burger-menu-btn']")
+            burger_button.click()
+
+        with allure.step("Пользователь совершает разлогин"):
+            logout_button = self.wait.until(EC.element_to_be_clickable(("xpath", "//a[@id='logout_sidebar_link']")))
+            logout_button.click()
+        with allure.step("Пользователь успешно разлогинен"):
+            self.wait.until(EC.url_to_be(f"{BASE_URL}"))
+            assert self.driver.current_url == BASE_URL, "URL не совпадает с ожидаемым результатом"
+            allure.attach(
+                body=self.driver.get_screenshot_as_png(),
+                name="Пользователь успешно разлогинен",
                 attachment_type=allure.attachment_type.PNG
             )

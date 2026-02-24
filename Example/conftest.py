@@ -1,11 +1,12 @@
 import pytest
 import os
-from collections import namedtuple
+# from collections import namedtuple
 from selenium import webdriver
-import time
+# import time
 from selenium.webdriver.chrome.options import Options
-# from faker import Faker
-# fake = Faker()
+from faker import Faker
+fake = Faker()
+from selenium.webdriver.support.ui import WebDriverWait
 
 # @pytest.fixture()
 # def generate_data():
@@ -14,14 +15,14 @@ from selenium.webdriver.chrome.options import Options
 #    NewUser = namedtuple('UserData', ['login', 'password'])  # именованный tuple
 #    return NewUser(login, password) # Возвращаем обьект
 
-#@pytest.fixture(name="driver")
-#def generate_data1(request):
+# @pytest.fixture(name="driver")
+# def generate_data1(request):
 #    # Генерируем данные
 #    request.cls.login = fake.email()
 #    request.cls.password = fake.password()
 
-#@pytest.fixture(autouse=True)
-#def driver():
+# @pytest.fixture(autouse=True)
+# def driver():
 #    driver = webdriver.Chrome()
 #    yield driver
 #    driver.quit()
@@ -30,8 +31,18 @@ from selenium.webdriver.chrome.options import Options
 def driver(request):
     chrome_options = Options()
     chrome_options.add_experimental_option("excludeSwitches",["enable-logging"])
+    chrome_options.add_argument("--incognito")
+    chrome_options.add_argument('--window-size=1920,1080')
+    chrome_options.add_experimental_option("prefs", {
+        "credentials_enable_service": False,
+        "profile.password_manager_enabled": False
+    })
     driver = webdriver.Chrome(options=chrome_options)
     request.cls.driver = driver
+    request.cls.wait = WebDriverWait(driver, timeout=10, poll_frequency=0.5)
+    request.cls.first_name = fake.first_name()
+    request.cls.last_name = fake.last_name()
+    request.cls.postal_code = fake.postcode()
     yield
     driver.quit()
 
