@@ -168,7 +168,6 @@ class TestBuyInventory:
         with allure.step("Пользователь совершает разлогин"):
             logout_button = self.wait.until(EC.element_to_be_clickable(("xpath", "//a[@id='logout_sidebar_link']")))
             logout_button.click()
-        with allure.step("Пользователь успешно разлогинен"):
             self.wait.until(EC.url_to_be(f"{BASE_URL}"))
             assert self.driver.current_url == BASE_URL, "URL не совпадает с ожидаемым результатом"
             allure.attach(
