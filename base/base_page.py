@@ -13,8 +13,14 @@ class BasePage(metaclass=MetaLocator):
         self.faker = Faker()
 
     def open(self):
-        with allure.step(f"Open page {self._PAGE_URL}"):
+        with allure.step(f"Пользователь открывает страницу {self._PAGE_URL}"):
             self.driver.get(self._PAGE_URL)
 
     def is_opened(self):
-        self.wait.until(EC.url_to_be(self._PAGE_URL))
+        with allure.step(f"Пользователь проверяет что открыта страница {self._PAGE_URL}"):
+            self.wait.until(EC.url_to_be(self._PAGE_URL))
+            allure.attach(
+                body=self.driver.get_screenshot_as_png(),
+                name=f"Скриншот открытой страницы {self._PAGE_URL}",
+                attachment_type=allure.attachment_type.PNG
+            )
