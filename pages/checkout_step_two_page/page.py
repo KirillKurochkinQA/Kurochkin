@@ -7,4 +7,4 @@ class CheckoutStepTwoPage(BasePage):
     _FINISH_BUTTON = "//button[@id='finish']"
 
     def click_finish_button(self):
-        ...
+        self.driver.find_element(*self._FINISH_BUTTON).click()
